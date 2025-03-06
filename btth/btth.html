@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1></h1>
+    <script>
+        // bước 1 lấy yêu cầu từ người dùng
+        // bước 2 kiểm tra yêu cầu từ người dùng
+        // bước 3 giải quyết các case
+        let choice;
+        const prices = [];
+        do {
+            choice = +prompt("mời bạn nhập yêu cầu: 1 - Thêm, 2 - sửa, 3 -xóa, 44 -in, 5 - tinhs tổng, 6- xóa toàn bộ , 7 - thoát");
+            switch (choice) {
+                case 1:
+                let priceInput = +prompt("Mời bạn nhập giá: ");
+
+                prices.push(priceInput);
+                alert("Thêm giá thành công");
+                    break;
+                case 2:
+                    const indexEdit = +prompt("Mời bạn nhập vị trí: ");
+                    const valueEdit = +prompt("Nhập giá mới: ");
+
+                    if (indexEdit < prices.length) {
+                        // cập nhật
+                        // prices[indexEdit] = valueEdit;
+                        prices.splice(indexEdit, 1, valueEdit)
+
+                        alert("cập nhật giá thành công");
+                    } else {
+                        alert("Vị trí ko hợp lệ");
+                    }
+                    break;
+                case 3:
+                    const indexDelete = +prompt("Nhập vị trí cần xóa");
+
+                    if (indexDelete < prices.length) {
+                        prices.splice(indexDelete, 1);
+                    } else {
+                        alert("xóa giá tiền thành công");
+                    }
+                    break;
+                case 4:
+                    console.log("Danh sách giá: ", prices);
+                    break;
+                case 5:
+                    let total = 0;
+                    for (let i = 0; i < prices.length; i++) {
+                        total += prices[i];
+                    }
+                    console.log("tổng tiền trong giỏ hàng: ",
+                    total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'}));
+                    
+                    break;
+                case 6:
+                    // làm rỗng mảng
+                    // prices.length = 0; 
+                    prices.splice(0)
+                    alert("giỏ hàng đã bị rỗng");
+                    break;
+                case 7:
+                    break;
+                default:
+                    console.log('lụa chọn ko hợp lệ');
+                    
+                    break;
+                
+            }
+        } while (choice !== 0);
+    </script>
+</body>
+</html>

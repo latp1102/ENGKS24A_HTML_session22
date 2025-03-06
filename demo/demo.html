@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let number1 = 10;
+        // do {
+        //    number1++;
+        //    ++number1;
+        // }while (number1 <= 12);
+        // console.log(number1);
+        // Khai báo mảng
+        const numbers = [1,2,3,4,5];
+
+        const students = [
+            "Nuyễn Văn A",
+            "Nuyễn Văn B",
+        ];
+        console.log("Numbers: ", numbers);
+        // truy cập phần tử mảng
+        console.log("Sinh viên tại vị trí 1: ",students[0]);
+        const students1 = ["Nguyễn Văn C","Nguyễ Văn D"];
+        for (let i = 0; i < students1.length; i++) {
+            console.log(`Tại vị trói thứ ${i} giá trị a=là: ${students1[i]}`);
+            
+        }
+        // dùng for in
+        for (const i in students1) {
+            console.log(`index: `,students1[i]);
+            
+        }
+        // dùng for of
+        for (const element of students1) {
+            console.log(element);
+            
+        }
+        //  thêm phần tử vào mảng
+        const cards = [12000,13000,14000];
+        cards.push('15000');
+        console.log("mảng sau khi thêm: ",cards);
+        cards.unshift("11000");
+        console.log("mảng sau:",cards);
+        // xóa ptu cuối mảng
+        cards.pop();
+        console.log(cards);
+        // xóa ptu đầu mảng
+        cards.shift();
+        console.log(cards);
+        
+        // hàm splice tròn java
+        const menu = ["Add", "Update", "remove"];
+        console.log("Menu trước: ", menu);
+        // thêm vào mảng
+        menu.splice(2, 0, "Search", "Sort", "Fillter");
+        console.log(menu);
+        // thsay thế vị trí
+        menu.splice(1, 1, "Export excel");
+        console.log(menu);
+        // xóa phtu trong mảng ở vị trí chỉ định
+        menu.splice(3, 1);
+        console.log("menu sau khi xóa: ",menu);
+        
+    </script>
+</body>
+</html>
